@@ -1,0 +1,2 @@
+TYPEMAP
+ex1_struct *	O_OBJECT

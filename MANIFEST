@@ -1,0 +1,8 @@
+Changes
+MANIFEST
+Makefile.PL
+Pspell.pm
+Pspell.xs
+typemap
+perlobject.map
+t/test.t

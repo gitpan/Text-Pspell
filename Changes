@@ -1,5 +1,10 @@
 Revision history for Perl extension Text::Pspell.
 
+0.03  Fri Aug 30 14:32:17 UTC 2002
+      - This module is now depreciated.  Aspell/Pspell has been
+        replaced by GNU Aspell. Text::Aspell is the module to
+        use with GNU Aspell, and is available on CPAN.
+
 0.02  Wed Nov 28 01:00:33 PST 2001
       - fixed syntax in t/test.t for perl 5.00503.  I didn't like 
         print grep( { $_ eq 'bar' } @s_words ) ? "ok 15 @s_words\n" : "not ok 15\n";

@@ -1,5 +1,9 @@
 Text::Pspell - Perl interface to the Pspell library
 
+Note: Due to the release of the new GNU Aspell this module is
+      no longer supported.  Text::Aspell is the replacement
+      module to work with GNU Aspell.
+
 1) Make sure you have a current version of Pspell and Aspell installed.
 
    This was tested with:

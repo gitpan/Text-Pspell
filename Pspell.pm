@@ -5,7 +5,7 @@ require DynaLoader;
 use vars qw/  @ISA $VERSION /;
 @ISA = 'DynaLoader';
 
-$VERSION = '0.02';
+$VERSION = '0.03';
 
 bootstrap Text::Pspell $VERSION;
 
@@ -52,6 +52,11 @@ Text::Pspell - Perl interface to the Pspell library
 
 
 =head1 DESCRIPTION
+
+B<NOTE:> Aspell/Pspell has been replaced by GNU Aspell.  Unless
+you are using an old installation of Aspell/Pspell you should use
+Text::Aspell instead of this module.  Text::Aspell is available on
+the CPAN.  Information on GNU Aspell can be found at http://aspell.net.
 
 This module provides a Perl interface to the Pspell library.
 The Pspell library provides access to system spelling libraries, and specifically

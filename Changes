@@ -1,6 +1,20 @@
 Revision history for Perl extension Text::Pspell.
 
+0.02  Wed Nov 28 01:00:33 PST 2001
+      - fixed syntax in t/test.t for perl 5.00503.  I didn't like 
+        print grep( { $_ eq 'bar' } @s_words ) ? "ok 15 @s_words\n" : "not ok 15\n";
+
+      - added a cast to:
+        PUSHs(sv_2mortal(newSVpv( (char *)suggestion, 0 )));
+
+      - added patch submitted by shadowhawk@xcom.pl
+        - printf("%20s:  %s\n", *opt, pspell_config_retrieve(self->config, *opt) );
+        + PerlIO_printf(PerlIO_stdout(),"%20s:  %s\n", *opt, pspell_config_retrieve(self->config, *opt) );
+
+      - added README
+
 0.01  Wed Nov 14 13:16:07 2001
 	- original version; created by h2xs 1.20 with options
 		-A -n Text::Pspell
+
 

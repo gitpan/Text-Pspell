@@ -1,5 +1,6 @@
 Changes
 MANIFEST
+README
 Makefile.PL
 Pspell.pm
 Pspell.xs

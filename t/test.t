@@ -49,15 +49,15 @@ print defined $speller->print_config ? "ok 11\n" : "not ok 11 " . $speller->errs
 print $speller->add_to_session('testt') ? "ok 12\n" : "not ok 12 " . $speller->errstr . "\n";
 @s_words = $speller->suggest('testt');
 
-print grep( { $_ eq 'testt' } @s_words ) ? "ok 13 @s_words\n" : "not ok 13\n";
+print '',(grep { $_ eq 'testt' } @s_words ) ? "ok 13 @s_words\n" : "not ok 13\n";
 
 print $speller->store_replacement('foo', 'bar') ? "ok 14\n" : "not ok 14 " . $speller->errstr . "\n";
 
 @s_words = $speller->suggest('foo');
-print grep( { $_ eq 'bar' } @s_words ) ? "ok 15 @s_words\n" : "not ok 15\n";
+print '',(grep { $_ eq 'bar' } @s_words ) ? "ok 15 @s_words\n" : "not ok 15\n";
 
 print $speller->clear_session ? "ok 16\n" : "not ok 16 " . $speller->errstr . "\n";
 @s_words = $speller->suggest('testt');
-print !grep( { $_ eq 'testt' } @s_words ) ? "ok 17 @s_words\n" : "not ok 17 @s_words\n";
+print '',(!grep { $_ eq 'testt' } @s_words)  ? "ok 17 @s_words\n" : "not ok 17 @s_words\n";
 
 

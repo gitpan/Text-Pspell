@@ -111,7 +111,7 @@ print_config(self)
 	    */
 
 	    for (opt=Option_List; *opt; opt++) 
-	        printf("%20s:  %s\n", *opt, pspell_config_retrieve(self->config, *opt) );
+            PerlIO_printf(PerlIO_stdout(),"%20s:  %s\n", *opt, pspell_config_retrieve(self->config, *opt) );
 
 	    RETVAL = 1;
 
@@ -244,7 +244,7 @@ suggest(self, word)
         els = pspell_word_list_elements(wl);
 
         while ( (suggestion = pspell_string_emulation_next(els)) )
-            PUSHs(sv_2mortal(newSVpv(suggestion,0)));
+            PUSHs(sv_2mortal(newSVpv( (char *)suggestion ,0 )));
 
         delete_pspell_string_emulation(els);
 

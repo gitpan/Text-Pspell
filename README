@@ -1,0 +1,43 @@
+Text::Pspell - Perl interface to the Pspell library
+
+1) Make sure you have a current version of Pspell and Aspell installed.
+
+   This was tested with:
+
+   aspell-.33.7.1   http://aspell.sourceforge.net
+   pspell-.12.2     http://pspell.sourceforge.net
+
+   Tested with: 
+      perl 5.6.0 on Linux, gcc version 2.95.3 20010315 (release)
+      perl 5.00503 on Solaris 2.6, gcc version 2.95.1 19990816 (release)
+
+   You should install from source instead of from a RPM.  The RPM's
+   may not have the english dictionary used in "make test".
+
+   The author of Aspell/Pspell says:
+
+     "While I recommend you use these binaries to avoid the hassle of 
+     installing aspell yourself I do not officially support them."
+
+   So I'd recommend building from source.  Or just don't run make test ;)
+
+
+2) If you install Apsell and Pspell in a non-standard location (for example, if
+   you don't have root access) then you will need to tell Makefile.PL where to
+   find the library.  
+
+   For example, if I installed Apsell/Pspell in /home/moseley/local/(lib|include),
+   and I have my own "perl_lib" library:
+
+   %perl Makefile.PL PREFIX=/home/moseley/perl_lib \
+   CCFLAGS=-I/home/moseley/local/include \
+   LIBS='-L/home/moseley/local/lib -lpspell'
+
+   Or maybe easier:
+
+   %perl Makefile.PL PREFIX=/home/moseley/perl_lib \
+   CCFLAGS=-I/home/moseley/local/include -L/home/moseley/local/lib -lpspell'
+
+
+3) I doubt this will work on Windows, but if it does, drop me a note.
+
